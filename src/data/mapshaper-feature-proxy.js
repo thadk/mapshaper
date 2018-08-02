@@ -21,10 +21,14 @@ internal.initFeatureProxy = function(lyr, arcs) {
       _bounds, _centroid, _innerXY, _xy, _ids, _id;
 
   // all contexts have $.id and $.mapshaperLayerName
-  addGetters(ctx, 
-        { id: function() { return _id; }},
-        { mapshaperLayerName: function() { return lyr.name; }
-      );
+  addGetters(ctx, { 
+          id: function() {
+            return _id; 
+          },
+          mapshaperLayerName: function() {
+                return lyr.name; 
+          }
+        });
 
   if (_records) {
     Object.defineProperty(ctx, 'properties',
